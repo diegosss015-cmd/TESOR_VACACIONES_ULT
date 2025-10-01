@@ -1,0 +1,4 @@
+streamlit==1.37.1
+pandas>=2.1
+openpyxl>=3.1.2
+streamlit-calendar>=1.0.3
