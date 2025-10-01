@@ -36,11 +36,11 @@ EMAILS = {
 }
 
 # --- SendGrid (dejado tal cual a tu pedido) ---
-SMTP_SERVER = "smtp.sendgrid.net"
-SMTP_PORT = 587
-REMITENTE = "sjs@limatours.com.pe"
-SMTP_USER = "apikey"
-SMTP_PASS = "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"
+SMTP_SERVER = os.getenv("SMTP_SERVER", "smtp.sendgrid.net")
+SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
+REMITENTE = os.getenv("REMITENTE", "sjs@limatours.com.pe")
+SMTP_USER = os.getenv("SMTP_USER", "apikey")
+SMTP_PASS = os.getenv("SMTP_PASS", "")
 
 HOY = date.today()
 
@@ -520,3 +520,4 @@ if es_aprobador:
                     conn.commit()
                     st.success("Estado revertido a Pendiente.")
                     st.rerun()
+
